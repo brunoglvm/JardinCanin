@@ -8,5 +8,6 @@
   ],
   "liveSassCompile.settings.generateMap": false,
   "liveSassCompile.settings.autoprefix": [],
-  "liveSassCompile.settings.includeItems": ["/src/sass/style.scss"]
+  "liveSassCompile.settings.includeItems": ["/src/sass/style.scss"],
+  "liveSassCompile.settings.showOutputWindowOn": "None"
 }

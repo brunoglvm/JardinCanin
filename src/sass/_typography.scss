@@ -1,0 +1,31 @@
+body {
+  color: $secondary-text-color;
+  font-family: $font-family-primary;
+  font-size: $font-size-md;
+  font-weight: $font-weight-reg;
+}
+
+a {
+  color: $tertiary-text-color;
+  font-family: $font-family-primary;
+  font-size: $font-size-md;
+  font-weight: $font-weight-md;
+}
+
+.btn-text {
+  color: $btn-text-color;
+  font-family: $font-family-primary;
+  font-size: $font-size-md;
+  font-weight: $font-weight-md;
+}
+
+.highlight-text {
+  color: $highlight-color;
+}
+
+h1 {
+  color: $text-color;
+  font-family: $font-family-secondary;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-bd;
+}
