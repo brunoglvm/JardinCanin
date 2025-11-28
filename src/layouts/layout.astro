@@ -1,0 +1,9 @@
+---
+import { cx } from "../lib/tailwind-utils";
+
+const { class: customClass } = Astro.props;
+---
+
+<div class={cx("mx-auto flex max-w-7xl flex-col px-6", customClass)}>
+  <slot />
+</div>
