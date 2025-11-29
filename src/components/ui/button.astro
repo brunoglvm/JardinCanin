@@ -1,0 +1,71 @@
+---
+import { cx } from "../../lib/tailwind-utils";
+
+const {
+  class: className = "",
+  href,
+  variant = "primary",
+  ...rest
+}: {
+  class?: string;
+  href?: string;
+  variant?: "primary" | "secondary";
+} = Astro.props;
+
+const variantClasses = {
+  primary:
+    "group relative overflow-hidden text-black text-subtitle-md transition-all duration-150",
+  secondary:
+    "bg-transparent border-2 text-subtitle-md border-orange text-beige-0",
+};
+
+const variantClass = variantClasses[variant] ?? variantClasses.primary;
+const isPrimary = variant === "primary";
+---
+
+{
+  href ? (
+    <a
+      class={cx(
+        "inline-flex cursor-pointer items-center justify-center rounded-full text-center",
+        variantClass,
+        className
+      )}
+      href={href}
+      {...rest}
+    >
+      {isPrimary && (
+          <span
+            aria-hidden="true"
+            class="pointer-events-none absolute inset-0 -z-20 bg-[linear-gradient(180deg,#FFB733_20%,#FF9E27_100%)]"
+          />
+          <span
+            aria-hidden="true"
+            class="pointer-events-none absolute inset-0 -z-10 bg-[rgba(255,255,255,0.2)] opacity-0 transition-opacity duration-150 group-hover:opacity-100"
+          />
+      )}
+      <slot />
+    </a>
+  ) : (
+    <button
+      class={cx(
+        "cursor-pointer rounded-full text-center",
+        variantClass,
+        className
+      )}
+      {...rest}
+    >
+      {isPrimary && (
+          <span
+            aria-hidden="true"
+            class="pointer-events-none absolute inset-0 -z-20 bg-[linear-gradient(180deg,#FFB733_20%,#FF9E27_100%)]"
+          />
+          <span
+            aria-hidden="true"
+            class="pointer-events-none absolute inset-0 -z-10 bg-[rgba(255,255,255,0.2)] opacity-0 transition-opacity duration-150 group-hover:opacity-100"
+          />
+      )}
+      <slot />
+    </button>
+  )
+}

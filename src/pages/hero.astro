@@ -1,10 +1,27 @@
 ---
 import Layout from "../layouts/layout.astro";
-import Logo from "../components/svg/logo.astro";
+import Button from "../components/ui/button.astro";
 ---
 
-<Layout>
-  <section>
-    <p>JardinCanin</p>
-  </section>
-</Layout>
+<section class="overflow-hidden pt-62.5 pb-43.75">
+  <Layout>
+    <div>
+      <h1 class="text-title-xl-bold max-w-125">
+        Galley of type and scrambled it <span class="text-orange">to make!</span
+        >
+      </h1>
+      <p class="text-subtitle mt-1 max-w-109">
+        Gentle pups bring joy to every lively home they visit. they brighten
+        hearts. they calm worries. stay nearby.
+      </p>
+      <div class="flex gap-4">
+        <Button href="#friends" class="mt-5 px-9 py-3">See Our Friends</Button>
+        <Button
+          variant="secondary"
+          href="tel:+11111111111"
+          class="mt-5 px-9 py-3">Contact Us</Button
+        >
+      </div>
+    </div>
+  </Layout>
+</section>
