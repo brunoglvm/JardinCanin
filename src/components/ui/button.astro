@@ -14,10 +14,13 @@ const {
 
 const variantClasses = {
   primary:
-    "group relative overflow-hidden text-black text-subtitle-md transition-all duration-150",
+    "group relative overflow-hidden text-black text-subtitle-md transition-all hover:shadow-[0_0_20px_rgba(255,183,51,0.6)] duration-450",
   secondary:
-    "bg-transparent border-2 text-subtitle-md border-orange text-beige-0",
+    "bg-transparent border text-subtitle-md border-beige-0 text-beige-0 hover:bg-beige-0 hover:text-black transition-all duration-300",
 };
+
+const gradient =
+  "pointer-events-none absolute inset-0 -z-1 bg-[linear-gradient(135deg,#FFB733_0%,#FF9E27_50%,#FFB733_100%)] bg-size-[200%_200%] bg-position-[0%_0%] duration-500 ease-out group-hover:bg-position-[100%_100%]";
 
 const variantClass = variantClasses[variant] ?? variantClasses.primary;
 const isPrimary = variant === "primary";
@@ -34,16 +37,7 @@ const isPrimary = variant === "primary";
       href={href}
       {...rest}
     >
-      {isPrimary && (
-          <span
-            aria-hidden="true"
-            class="pointer-events-none absolute inset-0 -z-20 bg-[linear-gradient(180deg,#FFB733_20%,#FF9E27_100%)]"
-          />
-          <span
-            aria-hidden="true"
-            class="pointer-events-none absolute inset-0 -z-10 bg-[rgba(255,255,255,0.2)] opacity-0 transition-opacity duration-150 group-hover:opacity-100"
-          />
-      )}
+      {isPrimary && <span aria-hidden="true" class={gradient} />}
       <slot />
     </a>
   ) : (
@@ -55,16 +49,7 @@ const isPrimary = variant === "primary";
       )}
       {...rest}
     >
-      {isPrimary && (
-          <span
-            aria-hidden="true"
-            class="pointer-events-none absolute inset-0 -z-20 bg-[linear-gradient(180deg,#FFB733_20%,#FF9E27_100%)]"
-          />
-          <span
-            aria-hidden="true"
-            class="pointer-events-none absolute inset-0 -z-10 bg-[rgba(255,255,255,0.2)] opacity-0 transition-opacity duration-150 group-hover:opacity-100"
-          />
-      )}
+      {isPrimary && <span aria-hidden="true" class={gradient} />}
       <slot />
     </button>
   )

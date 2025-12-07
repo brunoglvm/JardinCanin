@@ -1,9 +1,19 @@
 ---
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
 import Layout from "../layouts/layout.astro";
+import HeroImg from "../assets/images/hero.webp";
 import Button from "../components/ui/button.astro";
 ---
 
-<section class="overflow-hidden pt-62.5 pb-43.75">
+<section
+  class="text-beige-0 relative min-h-screen overflow-hidden pt-62.5 pb-43.75"
+>
+  <Image
+    src={HeroImg}
+    alt="Dog"
+    class="pointer-events-none absolute inset-0 -z-10 h-full w-full object-cover"
+  />
   <Layout>
     <div>
       <h1 class="text-title-xl-bold max-w-125">
@@ -15,12 +25,16 @@ import Button from "../components/ui/button.astro";
         hearts. they calm worries. stay nearby.
       </p>
       <div class="flex gap-4">
-        <Button href="#friends" class="mt-5 px-9 py-3">See Our Friends</Button>
+        <Button href="#friends" class="mt-5 px-9 py-3 text-black"
+          >See Our Friends</Button
+        >
         <Button
           variant="secondary"
           href="tel:+11111111111"
-          class="mt-5 px-9 py-3">Contact Us</Button
-        >
+          class="mt-5 flex gap-2.5 px-9 py-3"
+          >Contact Us
+          <Icon name="heroicons:phone-arrow-up-right-solid" />
+        </Button>
       </div>
     </div>
   </Layout>
