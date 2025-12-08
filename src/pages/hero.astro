@@ -3,18 +3,18 @@ import { Image } from "astro:assets";
 import { Icon } from "astro-icon/components";
 import Layout from "../layouts/layout.astro";
 import HeroImg from "../assets/images/hero.webp";
+import Navbar from "../components/navbar.astro";
 import Button from "../components/ui/button.astro";
 ---
 
-<section
-  class="text-beige-0 relative min-h-screen overflow-hidden pt-62.5 pb-43.75"
->
+<section class="relative min-h-screen overflow-hidden">
   <Image
     src={HeroImg}
     alt="Dog"
     class="pointer-events-none absolute inset-0 -z-10 h-full w-full object-cover"
   />
-  <Layout>
+  <Navbar />
+  <Layout class="text-beige-0 pt-48 pb-43.75">
     <div>
       <h1 class="text-title-xl-bold max-w-125">
         Galley of type and scrambled it <span class="text-orange">to make!</span

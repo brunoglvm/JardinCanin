@@ -1,0 +1,27 @@
+---
+import { menuItems } from "../data/menu-items";
+import Layout from "../layouts/layout.astro";
+import Logo from "./svg/logo.astro";
+---
+
+<header class="py-7.5">
+  <Layout>
+    <nav class="flex items-center justify-between">
+      <Logo class="text-orange" />
+      <ul class="flex gap-8">
+        {
+          menuItems.map((item) => (
+            <li>
+              <a
+                href={item.href}
+                class="hover:border-orange hover:text-orange border-b border-transparent pb-1 text-white transition-all duration-300"
+              >
+                {item.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+  </Layout>
+</header>
