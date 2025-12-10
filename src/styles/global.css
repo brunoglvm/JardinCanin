@@ -12,9 +12,21 @@
   --color-brown: #59504b;
 
   --color-black: #0e0907;
+
+  --breakpoint-xs: 480px;
 }
 
 @layer base {
+  *:focus {
+    outline: none;
+
+    &:focus-visible {
+      outline: 2px solid var(--color-orange);
+      outline-offset: 0.125rem;
+      border-radius: 0.25rem;
+    }
+  }
+
   body {
     font-family:
       "Poppins",
@@ -34,20 +46,26 @@
   }
 }
 
-@utility text-title-xl-bold {
+@utility text-title-xl {
   font-family: "Montserrat";
   line-height: 1.15;
   font-size: 4rem;
   font-weight: 700;
 }
 
+@utility text-title-lg {
+  font-family: "Montserrat";
+  line-height: 1.15;
+  font-size: 3.25rem;
+  font-weight: 700;
+}
+
 @utility text-subtitle {
   font-size: 1.125rem;
-  line-height: 1.6;
   font-weight: 400;
 }
 
-@utility text-subtitle-md {
+@utility text-subtitle-medium {
   font-size: 1.125rem;
   font-weight: 500;
 }

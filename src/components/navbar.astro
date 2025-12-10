@@ -2,13 +2,14 @@
 import { menuItems } from "../data/menu-items";
 import Layout from "../layouts/layout.astro";
 import Logo from "./svg/logo.astro";
+import Menu from "./svg/menu.astro";
 ---
 
 <header class="py-7.5">
   <Layout>
     <nav class="flex items-center justify-between">
       <Logo class="text-orange" />
-      <ul class="flex gap-8">
+      <ul class="hidden gap-8 md:flex">
         {
           menuItems.map((item) => (
             <li>
@@ -22,6 +23,7 @@ import Logo from "./svg/logo.astro";
           ))
         }
       </ul>
+      <Menu class="block md:hidden" />
     </nav>
   </Layout>
 </header>

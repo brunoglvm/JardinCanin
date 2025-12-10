@@ -14,24 +14,28 @@ import Button from "../components/ui/button.astro";
     class="pointer-events-none absolute inset-0 -z-10 h-full w-full object-cover"
   />
   <Navbar />
-  <Layout class="text-beige-0 pt-48 pb-43.75">
+  <Layout class="text-beige-0 mb:pb-43.75 pt-30 pb-28.5 md:pt-48">
     <div>
-      <h1 class="text-title-xl-bold max-w-125">
+      <h1 class="text-title-lg md:text-title-xl md:max-w-125">
         Galley of type and scrambled it <span class="text-orange">to make!</span
         >
       </h1>
-      <p class="text-subtitle mt-1 max-w-109">
+      <p
+        class="text-body md:text-subtitle mt-4 leading-[1.6] md:mt-2 md:max-w-109"
+      >
         Gentle pups bring joy to every lively home they visit. they brighten
         hearts. they calm worries. stay nearby.
       </p>
-      <div class="flex gap-4">
-        <Button href="#friends" class="mt-5 px-9 py-3 text-black"
+      <div class="mt-8 flex flex-col items-center gap-4 md:mt-5 md:flex-row">
+        <Button
+          href="#friends"
+          class="xs:max-w-98 w-full px-9 py-3 text-black md:w-auto"
           >See Our Friends</Button
         >
         <Button
           variant="secondary"
           href="tel:+11111111111"
-          class="mt-5 flex gap-2.5 px-9 py-3"
+          class="xs:max-w-98 flex w-full gap-2.5 px-9 py-3 md:w-auto"
           >Contact Us
           <Icon name="heroicons:phone-arrow-up-right-solid" />
         </Button>
