@@ -5,12 +5,12 @@ export interface MenuItem {
 
 export const menuItems: MenuItem[] = [
   {
-    label: "See Our Friends",
-    href: "#friends",
-  },
-  {
     label: "About",
     href: "#about",
+  },
+  {
+    label: "See Our Friends",
+    href: "#friends",
   },
   {
     label: "Blog",

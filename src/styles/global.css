@@ -27,6 +27,16 @@
     }
   }
 
+  ::selection {
+    background-color: var(--color-orange);
+    color: #2a231f;
+  }
+
+  ::-moz-selection {
+    background-color: var(--color-orange);
+    color: #2a231f;
+  }
+
   body {
     font-family:
       "Poppins",
@@ -46,6 +56,7 @@
   }
 }
 
+/* titles */
 @utility text-title-xl {
   font-family: "Montserrat";
   line-height: 1.15;
@@ -60,6 +71,19 @@
   font-weight: 700;
 }
 
+@utility text-title-md {
+  font-family: "Montserrat";
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+@utility text-title-sm {
+  font-family: "Montserrat";
+  font-size: 2.25rem;
+  font-weight: 700;
+}
+
+/* subtitles */
 @utility text-subtitle {
   font-size: 1.125rem;
   font-weight: 400;
@@ -70,6 +94,7 @@
   font-weight: 500;
 }
 
+/* body */
 @utility text-body {
   font-size: 1rem;
   font-weight: 400;

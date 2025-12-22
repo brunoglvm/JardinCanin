@@ -11,8 +11,13 @@ import Button from "../components/ui/button.astro";
   <Image
     src={HeroImg}
     alt="Dog"
+    loading="eager"
     class="pointer-events-none absolute inset-0 -z-10 h-full w-full object-cover"
   />
+  <div
+    class="to-green-10 pointer-events-none absolute inset-x-0 bottom-0 -z-1 h-80 bg-linear-to-b from-transparent"
+  >
+  </div>
   <Navbar />
   <Layout class="text-beige-0 mb:pb-43.75 pt-30 pb-28.5 md:pt-48">
     <div>

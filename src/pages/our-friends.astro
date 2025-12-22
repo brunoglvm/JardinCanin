@@ -1,0 +1,73 @@
+---
+import Layout from "../layouts/layout.astro";
+import type { Slide } from "../types/slide";
+import mock from "../assets/images/mock.jpg";
+import Carousel from "../components/carousel/carousel.astro";
+
+const slides: Slide[] = [
+  {
+    img: mock,
+    alt: "dog 1",
+  },
+  {
+    img: mock,
+    alt: "dog 2",
+  },
+  {
+    img: mock,
+    alt: "dog 3",
+  },
+  {
+    img: mock,
+    alt: "dog 4",
+  },
+  {
+    img: mock,
+    alt: "dog 5",
+  },
+  {
+    img: mock,
+    alt: "dog 5",
+  },
+  {
+    img: mock,
+    alt: "dog 5",
+  },
+  {
+    img: mock,
+    alt: "dog 5",
+  },
+  {
+    img: mock,
+    alt: "dog 5",
+  },
+  {
+    img: mock,
+    alt: "dog 5",
+  },
+  {
+    img: mock,
+    alt: "dog 5",
+  },
+  {
+    img: mock,
+    alt: "dog 5",
+  },
+  {
+    img: mock,
+    alt: "dog 5",
+  },
+];
+---
+
+<section
+  id="friends"
+  class="bg-green-10 text-beige-0 pt-12 pb-20.75 md:pt-18 md:pb-24.75"
+>
+  <Layout>
+    <h2 class="text-title-sm md:text-title-md text-center">Our Friends</h2>
+  </Layout>
+  <div class="mt-8 md:mt-12">
+    <Carousel slides={slides} />
+  </div>
+</section>
