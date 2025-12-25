@@ -1,7 +1,7 @@
 import Lenis from "lenis";
 
 const lenis = new Lenis({
-  lerp: 0.2,
+  lerp: 0.12,
   anchors: {
     duration: 1.5,
   },

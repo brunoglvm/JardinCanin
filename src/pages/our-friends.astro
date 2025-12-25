@@ -1,63 +1,7 @@
 ---
+import { dogSlides } from "../data/dogs";
 import Layout from "../layouts/layout.astro";
-import type { Slide } from "../types/slide";
-import mock from "../assets/images/mock.jpg";
 import Carousel from "../components/carousel/carousel.astro";
-
-const slides: Slide[] = [
-  {
-    img: mock,
-    alt: "dog 1",
-  },
-  {
-    img: mock,
-    alt: "dog 2",
-  },
-  {
-    img: mock,
-    alt: "dog 3",
-  },
-  {
-    img: mock,
-    alt: "dog 4",
-  },
-  {
-    img: mock,
-    alt: "dog 5",
-  },
-  {
-    img: mock,
-    alt: "dog 5",
-  },
-  {
-    img: mock,
-    alt: "dog 5",
-  },
-  {
-    img: mock,
-    alt: "dog 5",
-  },
-  {
-    img: mock,
-    alt: "dog 5",
-  },
-  {
-    img: mock,
-    alt: "dog 5",
-  },
-  {
-    img: mock,
-    alt: "dog 5",
-  },
-  {
-    img: mock,
-    alt: "dog 5",
-  },
-  {
-    img: mock,
-    alt: "dog 5",
-  },
-];
 ---
 
 <section
@@ -66,8 +10,17 @@ const slides: Slide[] = [
 >
   <Layout>
     <h2 class="text-title-sm md:text-title-md text-center">Our Friends</h2>
+    <p class="text-body md:text-subtitle text-gray mt-2 text-center md:mt-1">
+      Meet the wonderful pups who fill our days with <span class="dashed-line"
+        ><span class="font-medium">endless joy </span> and <span
+          class="font-medium"
+        >
+          playful moments</span
+        ></span
+      >
+    </p>
   </Layout>
   <div class="mt-8 md:mt-12">
-    <Carousel slides={slides} />
+    <Carousel slides={dogSlides} />
   </div>
 </section>

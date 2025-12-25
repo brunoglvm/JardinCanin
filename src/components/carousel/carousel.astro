@@ -1,11 +1,15 @@
 ---
 import "../carousel/carousel.css";
 import { Image } from "astro:assets";
-import type { Slide } from "../../types/slide";
 const { slides } = Astro.props;
 
+type CarouselItem = {
+  img: ImageMetadata;
+  alt: string;
+};
+
 type Props = {
-  slides: Slide[];
+  slides: CarouselItem[];
 };
 ---
 
@@ -13,15 +17,17 @@ type Props = {
   <div class="embla__container flex gap-4 md:mx-8 md:gap-8">
     {
       slides.map((slide) => (
-        <div class="embla__slide relative h-68 md:h-112">
+        <div class="embla__slide relative h-68 w-102 md:h-112 md:w-149.5">
           <Image
             src={slide.img}
             alt={slide.alt}
             class="h-full w-full rounded-2xl object-cover"
           />
-          {/* <p class="absolute bottom-4 left-4 z-10 text-2xl font-bold text-white drop-shadow-lg">
-            Nome - Anos
-          </p> */}
+          {/* <p
+        class="absolute bottom-4 left-4 z-10 text-2xl font-bold text-white drop-shadow-lg"
+      >
+        Nome - Anos
+      </p> */}
         </div>
       ))
     }
