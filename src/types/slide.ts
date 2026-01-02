@@ -7,6 +7,7 @@ export type Slide = {
 
 export type DogSlide = Slide & {
   name: string;
-  age: number;
+  ageInMonths: number;
   sex: "male" | "female";
+  desc: string;
 };

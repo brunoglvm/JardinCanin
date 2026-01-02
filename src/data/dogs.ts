@@ -5,73 +5,87 @@ type DogSource = Omit<DogSlide, "alt" | "img">;
 const dogs: DogSource[] = [
   {
     name: "Tyler",
-    age: 3,
+    ageInMonths: 36,
     sex: "male",
+    desc: "Energetic and playful dog, loves to run and fetch the ball.",
   },
   {
     name: "Toby",
-    age: 5,
+    ageInMonths: 60,
     sex: "male",
+    desc: "Calm and friendly dog, perfect for families with children.",
   },
   {
     name: "Maggie",
-    age: 1,
+    ageInMonths: 12,
     sex: "female",
+    desc: "Curious and energetic puppy, loves to explore new places.",
   },
   {
     name: "Charlie",
-    age: 4,
+    ageInMonths: 48,
     sex: "male",
+    desc: "Loyal and protective dog, great companion for the whole family.",
   },
   {
     name: "Mike",
-    age: 2,
+    ageInMonths: 24,
     sex: "male",
+    desc: "Young and active, loves outdoor activities and making new friends.",
   },
   {
     name: "Bella",
-    age: 1,
+    ageInMonths: 5,
     sex: "female",
+    desc: "Sweet and affectionate puppy, always ready to give love.",
   },
   {
     name: "Rocky",
-    age: 3,
+    ageInMonths: 36,
     sex: "female",
+    desc: "Adventurous and brave dog, loves trails and long walks.",
   },
   {
     name: "Luna",
-    age: 3,
+    ageInMonths: 36,
     sex: "female",
+    desc: "Gentle and calm dog, ideal for quieter environments.",
   },
   {
     name: "Daisy",
-    age: 1,
+    ageInMonths: 8,
     sex: "male",
+    desc: "Cheerful and sociable puppy, loves meeting people and other dogs.",
   },
   {
     name: "Molly",
-    age: 2,
+    ageInMonths: 24,
     sex: "female",
+    desc: "Affectionate and intelligent dog, learns commands quickly.",
   },
   {
     name: "Lilly",
-    age: 6,
+    ageInMonths: 72,
     sex: "female",
+    desc: "Experienced and wise dog, calm and companion for peaceful moments.",
   },
   {
     name: "Lucy",
-    age: 5,
+    ageInMonths: 60,
     sex: "female",
+    desc: "Docile and patient dog, excellent for living with other pets.",
   },
   {
     name: "Oliver",
-    age: 1,
+    ageInMonths: 4,
     sex: "male",
+    desc: "Mischievous and fun puppy, brings lots of joy to the home.",
   },
   {
     name: "Sadie",
-    age: 6,
+    ageInMonths: 72,
     sex: "female",
+    desc: "Serene and affectionate dog, perfect companion for all ages.",
   },
 ];
 
@@ -84,7 +98,7 @@ export const dogSlides = await Promise.all(
     return {
       ...dog,
       img,
-      alt: `${dog.name}, ${dog.age} ${dog.age === 1 ? "year" : "years"} old ${dog.sex} dog`,
+      alt: `${dog.name}, ${dog.ageInMonths} ${dog.ageInMonths === 1 ? "month" : "months"} old ${dog.sex} dog`,
     };
   }),
 );

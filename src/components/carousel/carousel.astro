@@ -1,35 +1,58 @@
 ---
 import "../carousel/carousel.css";
 import { Image } from "astro:assets";
+import type { Slide, DogSlide } from "../../types/slide";
+import { dogSlides } from "../../data/dogs";
+import PawIcon from "../svg/paw.astro";
 const { slides } = Astro.props;
 
-type CarouselItem = {
-  img: ImageMetadata;
-  alt: string;
+type Props = {
+  slides: Slide[] | DogSlide[];
 };
 
-type Props = {
-  slides: CarouselItem[];
+const isDogSlides = slides === dogSlides;
+
+const getAge = (ageInMonths: number) => {
+  if (ageInMonths < 12) {
+    return `${ageInMonths} ${ageInMonths === 1 ? "month" : "months"}`;
+  }
+  const years = Math.floor(ageInMonths / 12);
+  return `${years} ${years === 1 ? "year" : "years"}`;
 };
 ---
 
 <div class="embla px-4 md:px-0">
   <div class="embla__container flex gap-4 md:mx-8 md:gap-8">
     {
-      slides.map((slide) => (
-        <div class="embla__slide relative h-68 w-102 md:h-112 md:w-149.5">
-          <Image
-            src={slide.img}
-            alt={slide.alt}
-            class="h-full w-full rounded-2xl object-cover"
-          />
-          {/* <p
-        class="absolute bottom-4 left-4 z-10 text-2xl font-bold text-white drop-shadow-lg"
-      >
-        Nome - Anos
-      </p> */}
-        </div>
-      ))
+      slides.map((slide) => {
+        const dogSlide = slide as DogSlide;
+
+        return (
+          <div class="embla__slide relative h-68 w-102 overflow-hidden rounded-2xl md:h-112 md:w-149.5">
+            <Image
+              src={slide.img}
+              alt={slide.alt}
+              class="h-full w-full object-cover"
+            />
+
+            {isDogSlides && (
+                <div class="pointer-events-none absolute inset-x-0 bottom-0 h-4/6 bg-linear-to-t from-black/80 to-transparent" />
+                <div class="absolute right-4 bottom-4 left-4 space-y-1">
+                  <p class="text-2xl font-medium">
+                    {dogSlide.name} - {getAge(dogSlide.ageInMonths)}
+                  </p>
+                  <p class="text-gray text-sm">{dogSlide.desc}</p>
+                </div>
+                <div
+                  class={`absolute top-4 right-4 flex items-center rounded-full ${dogSlide.sex === "female" ? "bg-[#fa6e91]" : "bg-[#2fa2db]"} gap-1 px-3 py-1 text-[#2a231f]`}
+                >
+                  <PawIcon aria-hidden="true" />
+                  <p class="text-xs capitalize">{dogSlide.sex}</p>
+                </div>
+            )}
+          </div>
+        )
+      })
     }
   </div>
   <div class="embla__dots" data-embla-dots></div>
