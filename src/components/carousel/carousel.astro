@@ -2,6 +2,7 @@
 import "../carousel/carousel.css";
 import { Image } from "astro:assets";
 import type { Slide, DogSlide } from "../../types/slide";
+import { getAge } from "../../utils/age-formatters"
 import { dogSlides } from "../../data/dogs";
 import PawIcon from "../svg/paw.astro";
 const { slides } = Astro.props;
@@ -11,14 +12,6 @@ type Props = {
 };
 
 const isDogSlides = slides === dogSlides;
-
-const getAge = (ageInMonths: number) => {
-  if (ageInMonths < 12) {
-    return `${ageInMonths} ${ageInMonths === 1 ? "month" : "months"}`;
-  }
-  const years = Math.floor(ageInMonths / 12);
-  return `${years} ${years === 1 ? "year" : "years"}`;
-};
 ---
 
 <div class="embla px-4 md:px-0">

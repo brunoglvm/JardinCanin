@@ -1,4 +1,5 @@
 import type { DogSlide } from "../types/slide";
+import { getAgeAltText } from "../utils/age-formatters";
 
 type DogSource = Omit<DogSlide, "alt" | "img">;
 
@@ -42,7 +43,7 @@ const dogs: DogSource[] = [
   {
     name: "Rocky",
     ageInMonths: 36,
-    sex: "female",
+    sex: "male",
     desc: "Adventurous and brave dog, loves trails and long walks.",
   },
   {
@@ -54,7 +55,7 @@ const dogs: DogSource[] = [
   {
     name: "Daisy",
     ageInMonths: 8,
-    sex: "male",
+    sex: "female",
     desc: "Cheerful and sociable puppy, loves meeting people and other dogs.",
   },
   {
@@ -98,7 +99,7 @@ export const dogSlides = await Promise.all(
     return {
       ...dog,
       img,
-      alt: `${dog.name}, ${dog.ageInMonths} ${dog.ageInMonths === 1 ? "month" : "months"} old ${dog.sex} dog`,
+      alt: `${dog.name}, ${getAgeAltText(dog.ageInMonths)} ${dog.sex} dog`,
     };
   }),
 );
