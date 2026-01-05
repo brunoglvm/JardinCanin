@@ -1,0 +1,64 @@
+---
+import type { FAQItem } from "../types/faq";
+import { Icon } from "astro-icon/components";
+const { items } = Astro.props;
+
+type Props = {
+  items: FAQItem[];
+};
+---
+
+{
+  items.map((item) => (
+    <div class="accordion border-green-0 mx-auto flex w-full max-w-240 flex-col border-b">
+      <button
+        data-accordion-btn
+        class="hover:text-orange flex w-full cursor-pointer justify-between gap-1 py-6 transition-colors duration-180"
+      >
+        <p class="text-subtitle md:text-xl">{item.question}</p>
+        <Icon
+          name="heroicons:plus-circle"
+          class="accordion-icon-plus shrink-0"
+          size={28}
+        />
+        <Icon
+          name="heroicons:minus-circle"
+          class="accordion-icon-minus hidden shrink-0"
+          size={28}
+        />
+      </button>
+      <div class="accordion-content hidden px-4 pb-6">
+        <p class="text-gray md:text-body text-[.875rem]">{item.answer}</p>
+      </div>
+    </div>
+  ))
+}
+
+<script>
+  const btns = document.querySelectorAll<HTMLButtonElement>(
+    "[data-accordion-btn]"
+  );
+
+  const setAccordionState = (btn: HTMLButtonElement, open: boolean) => {
+    const accordion = btn.closest(".accordion");
+    const content = accordion?.querySelector(".accordion-content");
+    const plusIcon = btn.querySelector(".accordion-icon-plus");
+    const minusIcon = btn.querySelector(".accordion-icon-minus");
+
+    content?.classList.toggle("hidden", !open);
+    plusIcon?.classList.toggle("hidden", open);
+    minusIcon?.classList.toggle("hidden", !open);
+  };
+
+  btns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const accordion = btn.closest(".accordion");
+      const content = accordion?.querySelector(".accordion-content");
+      const isOpen = content ? !content.classList.contains("hidden") : false;
+
+      btns.forEach((b) => setAccordionState(b, false));
+
+      if (!isOpen) setAccordionState(btn, true);
+    });
+  });
+</script>

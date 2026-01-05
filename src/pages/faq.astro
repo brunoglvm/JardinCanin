@@ -1,0 +1,28 @@
+---
+import { Image } from "astro:assets";
+import Layout from "../layouts/layout.astro";
+import { faqItems } from "../data/faq-items";
+import Question from "../assets/images/question.webp";
+import Accordion from "../components/accordion.astro";
+---
+
+<section
+  id="faq"
+  class="bg-green-20 text-beige-0 overflow-hidden pt-12 pb-20.75 md:pt-18 md:pb-24.75"
+>
+  <Layout class="relative">
+    <Image
+      src={Question}
+      class="pointer-events-none absolute -right-55 bottom-0 w-80"
+      alt="Illustration of a confused dog with a question mark."
+    />
+    <h2 class="text-title-sm md:text-title-md text-center">FAQ</h2>
+    <p
+      class="text-body md:text-subtitle text-gray mt-2 mb-8 text-center md:mt-1"
+    >
+      Find answers to the most common questions<br />about our dog daycare
+      services
+    </p>
+    <Accordion items={faqItems} />
+  </Layout>
+</section>

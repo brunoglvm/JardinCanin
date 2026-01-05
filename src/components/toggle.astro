@@ -1,17 +1,17 @@
 ---
-import Layout from "../layouts/layout.astro";
-import Close from "./svg/close.astro";
-import Logo from "./svg/logo.astro";
-import { menuItems } from "../data/menu-items";
 import { Image } from "astro:assets";
+import Layout from "../layouts/layout.astro";
+import { menuItems } from "../data/menu-items";
 import BgPattern from "../assets/images/menu-bg.webp";
+import Logo from "./svg/logo.astro";
+import Close from "./svg/close.astro";
 ---
 
 <div
   id="menu"
   role="dialog"
   aria-modal="true"
-  class="bg-green-10 fixed inset-0 z-1000 translate-x-full transition-all duration-500 md:hidden"
+  class="bg-green-20 fixed inset-0 z-1000 translate-x-full transition-all duration-500 md:hidden"
 >
   <Image
     src={BgPattern}
