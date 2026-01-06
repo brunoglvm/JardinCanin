@@ -1,3 +1,8 @@
+export type FAQItem = {
+  question: string;
+  answer: string;
+};
+
 export const faqItems = [
   {
     question: "What are your operating hours?",

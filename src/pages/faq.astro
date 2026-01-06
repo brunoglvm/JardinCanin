@@ -11,11 +11,6 @@ import Accordion from "../components/accordion.astro";
   class="bg-green-20 text-beige-0 overflow-hidden pt-12 pb-20.75 md:pt-18 md:pb-24.75"
 >
   <Layout class="relative">
-    <Image
-      src={Question}
-      class="pointer-events-none absolute -right-55 bottom-0 w-80"
-      alt="Illustration of a confused dog with a question mark."
-    />
     <h2 class="text-title-sm md:text-title-md text-center">FAQ</h2>
     <p
       class="text-body md:text-subtitle text-gray mt-2 mb-8 text-center md:mt-1"
@@ -24,5 +19,10 @@ import Accordion from "../components/accordion.astro";
       services
     </p>
     <Accordion items={faqItems} />
+    <Image
+      src={Question}
+      class="pointer-events-none relative mx-auto mt-8 w-60 xl:absolute xl:top-60 xl:-left-42 xl:mt-0 xl:w-80 2xl:-left-55"
+      alt="Dog illustration with a question mark."
+    />
   </Layout>
 </section>

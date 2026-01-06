@@ -13,10 +13,6 @@ export const menuItems: MenuItem[] = [
     href: "#friends",
   },
   {
-    label: "Blog",
-    href: "#blog",
-  },
-  {
     label: "FAQ",
     href: "#faq",
   },
