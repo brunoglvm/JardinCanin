@@ -1,5 +1,10 @@
 ---
-const { width = "32", height = "33", ...rest } = Astro.props;
+const {
+  width = "32",
+  height = "33",
+  stroke = "currentColor",
+  ...rest
+} = Astro.props;
 ---
 
 <svg
@@ -10,10 +15,9 @@ const { width = "32", height = "33", ...rest } = Astro.props;
   xmlns="http://www.w3.org/2000/svg"
   {...rest}
 >
-  <title>Menu</title>
   <path
     d="M5.33325 8.5H26.6666M5.33325 16.5H26.6666M17.3333 24.5H26.6666"
-    stroke="#FFFFFF"
+    stroke={stroke}
     stroke-width="2"
     stroke-linecap="round"
     stroke-linejoin="round"></path>

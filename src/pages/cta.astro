@@ -1,0 +1,27 @@
+---
+import Layout from "../layouts/layout.astro";
+import { Icon } from "astro-icon/components";
+import Button from "../components/ui/button.astro";
+---
+
+<section id="cta" class="bg-green-10 text-beige overflow-hidden py-10 md:py-14">
+  <Layout>
+    <h2 class="text-title-sm md:text-title-md text-center">
+      Pure Care<br /> For Every Pup
+    </h2>
+    <div
+      class="mt-6 flex flex-col items-center gap-4 md:flex-row md:justify-center"
+    >
+      <Button href="#friends" class="xs:max-w-98 w-full px-9 py-3 md:w-auto"
+        >See Our Friends</Button
+      >
+      <Button
+        variant="secondary"
+        href="tel:+11111111111"
+        class="xs:max-w-98 flex w-full gap-2.5 px-9 py-3 md:w-auto"
+        >Contact Us
+        <Icon name="heroicons:phone-arrow-up-right-solid" />
+      </Button>
+    </div>
+  </Layout>
+</section>

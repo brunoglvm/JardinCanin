@@ -7,7 +7,7 @@ import Navbar from "../components/navbar.astro";
 import Button from "../components/ui/button.astro";
 ---
 
-<section class="relative min-h-screen overflow-hidden">
+<section id="top" class="relative min-h-screen overflow-hidden">
   <Image
     src={HeroImg}
     alt="Dog"
@@ -19,32 +19,28 @@ import Button from "../components/ui/button.astro";
   >
   </div>
   <Navbar />
-  <Layout class="text-beige-0 mb:pb-43.75 pt-20 pb-28.5 md:pt-48">
-    <div>
-      <h1 class="text-title-lg md:text-title-xl md:max-w-125">
-        Galley of type and scram<span class="xs:opacity-100 opacity-50"
-          >bled it</span
-        >
-        <span class="text-orange">to make!</span>
-      </h1>
-      <p class="text-body md:text-subtitle mt-2 leading-[1.6] md:max-w-109">
-        Gentle pups bring joy to every lively home they visit. they brighten
-        hearts. they calm worries. stay nearby.
-      </p>
-      <div class="mt-5 flex flex-col items-center gap-4 md:flex-row">
-        <Button
-          href="#friends"
-          class="xs:max-w-98 w-full px-9 py-3 text-black md:w-auto"
-          >See Our Friends</Button
-        >
-        <Button
-          variant="secondary"
-          href="tel:+11111111111"
-          class="xs:max-w-98 flex w-full gap-2.5 px-9 py-3 md:w-auto"
-          >Contact Us
-          <Icon name="heroicons:phone-arrow-up-right-solid" />
-        </Button>
-      </div>
+  <Layout class="text-beige mb:pb-43.75 pt-20 pb-28.5 md:pt-48">
+    <h1 class="text-title-lg md:text-title-xl md:max-w-125">
+      Galley of type and scram<span class="xs:opacity-100 opacity-50"
+        >bled it</span
+      >
+      <span class="text-orange">to make!</span>
+    </h1>
+    <p class="text-body md:text-subtitle mt-2 leading-[1.6] md:max-w-109">
+      Gentle pups bring joy to every lively home they visit. they brighten
+      hearts. they calm worries. stay nearby.
+    </p>
+    <div class="mt-5 flex flex-col items-center gap-4 md:flex-row">
+      <Button href="#friends" class="xs:max-w-98 w-full px-9 py-3 md:w-auto"
+        >See Our Friends</Button
+      >
+      <Button
+        variant="secondary"
+        href="tel:+11111111111"
+        class="xs:max-w-98 flex w-full gap-2.5 px-9 py-3 md:w-auto"
+        >Contact Us
+        <Icon name="heroicons:phone-arrow-up-right-solid" />
+      </Button>
     </div>
   </Layout>
 </section>

@@ -3,12 +3,12 @@
 
 @theme {
   --color-orange: #ff9922;
-  --color-green-0: #476543;
+  --color-green-0: #698561;
+  --color-green-5: #476543;
   --color-green-10: #335533;
   --color-green-20: #203826;
 
-  --color-beige-0: #fcf4ec;
-  --color-beige-10: #f9e9e5;
+  --color-beige: #fcf4ec;
   --color-gray: #d1cac2;
   --color-brown: #59504b;
 
@@ -53,7 +53,7 @@
       sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: var(--color-beige-0);
+    background-color: var(--color-green-20);
   }
 }
 

@@ -3,9 +3,13 @@ import "../styles/global.css";
 import "@fontsource/montserrat/700";
 import "@fontsource/poppins/400";
 import "@fontsource/poppins/500";
+import Layout from "../layouts/layout.astro";
 import Hero from "./hero.astro";
 import Friends from "./our-friends.astro";
 import Faq from "./faq.astro";
+import Cta from "./cta.astro";
+import Footer from "./footer.astro";
+import Arrow from "../components/svg/arrow.astro";
 ---
 
 <!doctype html>
@@ -25,6 +29,18 @@ import Faq from "./faq.astro";
       <Hero />
       <Friends />
       <Faq />
+      <Cta />
+      <Layout class="relative">
+        <a
+          href="#top"
+          title="Scroll to top"
+          aria-label="Scroll to top"
+          class="border-orange absolute -top-9 right-4 z-100 hidden rounded-full border px-1 pt-2 pb-7.5 md:flex"
+        >
+          <Arrow aria-hidden="true" class="text-orange size-7 -rotate-90" />
+        </a>
+      </Layout>
+      <Footer />
     </main>
     <script src="../lib/smooth-scroll.ts"></script>
   </body>

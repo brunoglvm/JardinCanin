@@ -1,0 +1,23 @@
+---
+const {
+  width = "41",
+  height = "41",
+  fill = "currentColor",
+  ...rest
+} = Astro.props;
+---
+
+<svg
+  width={width}
+  height={height}
+  viewBox="0 0 41 41"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+  {...rest}
+>
+  <path
+    fill-rule="evenodd"
+    clip-rule="evenodd"
+    d="M21.9977 9.51465L32.1401 20.3332L21.9977 31.1517L20.607 29.848L28.6335 21.2863L10.5002 21.2863L10.5002 19.3801L28.6335 19.3801L20.607 10.8184L21.9977 9.51465Z"
+    fill={fill}></path>
+</svg>
