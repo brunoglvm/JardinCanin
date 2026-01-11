@@ -14,17 +14,16 @@ type Props = {
       <button
         data-accordion-btn
         class="hover:text-orange flex w-full cursor-pointer justify-between gap-1 py-6 transition-colors duration-180"
+        aria-expanded="false"
       >
         <p class="text-subtitle md:text-xl">{item.question}</p>
         <Icon
           name="heroicons:plus-circle"
-          class="accordion-icon-plus shrink-0"
-          size={28}
+          class="accordion-icon-plus size-7 shrink-0"
         />
         <Icon
           name="heroicons:minus-circle"
-          class="accordion-icon-minus hidden shrink-0"
-          size={28}
+          class="accordion-icon-minus hidden size-7 shrink-0"
         />
       </button>
       <div class="accordion-content hidden px-4 pb-6">
@@ -45,6 +44,7 @@ type Props = {
     const plusIcon = btn.querySelector(".accordion-icon-plus");
     const minusIcon = btn.querySelector(".accordion-icon-minus");
 
+    btn.setAttribute("aria-expanded", open ? "true" : "false");
     content?.classList.toggle("hidden", !open);
     plusIcon?.classList.toggle("hidden", open);
     minusIcon?.classList.toggle("hidden", !open);

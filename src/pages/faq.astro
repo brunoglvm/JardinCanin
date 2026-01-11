@@ -2,7 +2,7 @@
 import { Image } from "astro:assets";
 import Layout from "../layouts/layout.astro";
 import { faqItems } from "../data/faq-items";
-import Question from "../assets/images/question.webp";
+import QuestionDog from "../assets/images/question.webp";
 import Accordion from "../components/accordion.astro";
 ---
 
@@ -20,7 +20,7 @@ import Accordion from "../components/accordion.astro";
     </p>
     <Accordion items={faqItems} />
     <Image
-      src={Question}
+      src={QuestionDog}
       class="pointer-events-none relative mx-auto mt-8 w-60 xl:absolute xl:top-60 xl:-left-42 xl:mt-0 xl:w-80 2xl:-left-55"
       alt="Dog illustration with a question mark."
     />

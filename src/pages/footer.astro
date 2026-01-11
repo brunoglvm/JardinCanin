@@ -24,7 +24,9 @@ import Logo from "../components/svg/logo.astro";
         <Logo class="text-orange order-1" width="98" height="90" />
 
         <div class="order-2 flex flex-col text-sm md:order-3 md:basis-full">
-          <div class="flex flex-col gap-6 md:flex-row md:justify-between">
+          <div
+            class="flex flex-col gap-6 break-all md:flex-row md:justify-between"
+          >
             <address class="not-italic">
               <a
                 href="https://www.google.com/maps/place/Toronto,+ON,+Canada/@43.718371,-79.5428638,11z/data=!3m1!4b1!4m6!3m5!1s0x89d4cb90d7c63ba5:0x323555502ab4c477!8m2!3d43.6548253!4d-79.388447!16zL20vMGg3aDY?entry=ttu&g_ep=EgoyMDI2MDEwNi4wIKXMDSoASAFQAw%3D%3D"
@@ -32,7 +34,11 @@ import Logo from "../components/svg/logo.astro";
                 rel="noopener noreferrer"
                 class="hover:text-orange flex gap-2 transition-colors duration-180"
               >
-                <Icon name="heroicons:map-pin-solid" class="size-5 shrink-0" />
+                <Icon
+                  name="heroicons:map-pin-solid"
+                  class="size-5 shrink-0"
+                  aria-hidden="true"
+                />
                 123 Garden Mirage, <br /> Toronto, Ontario, <br /> Canada
               </a>
             </address>
@@ -42,7 +48,11 @@ import Logo from "../components/svg/logo.astro";
                 href="mailto:jardincanin@email.com"
                 class="hover:text-orange flex w-fit gap-2 transition-colors duration-180"
               >
-                <Icon name="heroicons:envelope-solid" class="size-5 shrink-0" />
+                <Icon
+                  name="heroicons:envelope-solid"
+                  class="size-5 shrink-0"
+                  aria-hidden="true"
+                />
                 jardincanin@email.com
               </a>
               <a
@@ -52,6 +62,7 @@ import Logo from "../components/svg/logo.astro";
                 <Icon
                   name="heroicons:phone-arrow-up-right-solid"
                   class="size-5 shrink-0"
+                  aria-hidden="true"
                 />
                 +1 416 123-4567
               </a>
@@ -73,7 +84,7 @@ import Logo from "../components/svg/logo.astro";
                   aria-label={`Visit Jardin Canin on ${label}`}
                   class="hover:border-orange hover:text-orange hover:bg-orange/10 border-green-0 flex items-center justify-center rounded-full border p-2.5 transition-colors duration-180"
                 >
-                  <Icon width="20" height="20" aria-hidden="true" />
+                  <Icon class="size-5" aria-hidden="true" />
                 </a>
               </li>
             ))

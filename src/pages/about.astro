@@ -1,0 +1,66 @@
+---
+import { Image } from "astro:assets";
+import Layout from "../layouts/layout.astro";
+import AboutDog from "../assets/images/about.webp";
+import { Icon } from "astro-icon/components";
+---
+
+<section
+  id="about"
+  class="bg-green-20 text-beige overflow-hidden pt-12 pb-20.75 md:pt-18 md:pb-24.75"
+>
+  <Layout>
+    <div class="flex flex-col xl:flex-row xl:items-center">
+      <div class="w-full space-y-5 md:w-3xl">
+        <h2 class="text-title-sm md:text-title-md">
+          We nurture confident, balanced dogs every day
+        </h2>
+        <p class="text-body md:text-subtitle leading-[1.6]">
+          Jardin Canin is a <span class="text-orange font-medium"
+            >boutique retreat
+          </span> tucked inside Toronto&rsquo;s lush corridors. Trainers, walkers,
+          and therapists shape each day so dogs move between exploration, brain games,
+          and restorative calm.
+        </p>
+        <p class="text-body md:text-subtitle leading-[1.6]">
+          From sunrise strolls to twilight cuddle nooks, we watch every guest
+          closely and send sweet updates to families. <span
+            class="text-orange font-medium"
+            >Puppies, seniors, and high-energy pals
+          </span> all find routines that help them thrive.
+        </p>
+        <ul class="space-y-3">
+          <li class="flex items-center gap-2">
+            <Icon
+              name="heroicons:check-badge"
+              class="text-orange size-7 shrink-0"
+              aria-hidden="true"
+            />
+            Certified canine behaviorists and pet first-aid specialists on site.
+          </li>
+          <li class="flex items-center gap-2">
+            <Icon
+              name="heroicons:check-badge"
+              class="text-orange size-7 shrink-0"
+              aria-hidden="true"
+            />
+            Tailored enrichment blocks blending nature walks, agility, and rest.
+          </li>
+          <li class="flex items-center gap-2">
+            <Icon
+              name="heroicons:check-badge"
+              class="text-orange size-7 shrink-0"
+              aria-hidden="true"
+            />
+            Daily photo journals so you never miss a milestone or goofy moment.
+          </li>
+        </ul>
+      </div>
+      <Image
+        src={AboutDog}
+        alt="Dog illustration."
+        class="pointer-events-none mx-auto mt-8 w-60 xl:mt-0 xl:w-80"
+      />
+    </div>
+  </Layout>
+</section>

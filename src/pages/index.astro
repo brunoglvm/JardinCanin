@@ -5,6 +5,7 @@ import "@fontsource/poppins/400";
 import "@fontsource/poppins/500";
 import Layout from "../layouts/layout.astro";
 import Hero from "./hero.astro";
+import About from "./about.astro";
 import Friends from "./our-friends.astro";
 import Faq from "./faq.astro";
 import Cta from "./cta.astro";
@@ -27,6 +28,7 @@ import Arrow from "../components/svg/arrow.astro";
   <body>
     <main>
       <Hero />
+      <About />
       <Friends />
       <Faq />
       <Cta />
@@ -37,7 +39,7 @@ import Arrow from "../components/svg/arrow.astro";
           aria-label="Scroll to top"
           class="border-orange absolute -top-9 right-4 z-100 hidden rounded-full border px-1 pt-2 pb-7.5 md:flex"
         >
-          <Arrow aria-hidden="true" class="text-orange size-7 -rotate-90" />
+          <Arrow class="text-orange -rotate-90" aria-hidden="true" />
         </a>
       </Layout>
       <Footer />

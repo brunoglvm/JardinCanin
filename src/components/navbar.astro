@@ -9,7 +9,7 @@ import Toggle from "./toggle.astro";
 <header>
   <Layout class="py-7.5">
     <nav id="navbar" class="flex items-center justify-between">
-      <Logo class="text-orange" />
+      <Logo class="text-orange" aria-hidden="true" />
       <ul class="hidden gap-8 md:flex">
         {
           menuItems.map((item) => (
@@ -29,7 +29,7 @@ import Toggle from "./toggle.astro";
         aria-label="Abrir menu"
         aria-expanded="false"
       >
-        <Menu />
+        <Menu aria-hidden="true" />
       </button>
       <Toggle />
     </nav>
