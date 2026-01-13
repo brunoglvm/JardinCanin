@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "dogs",
+  "info": {
+    "singularName": "dog",
+    "pluralName": "dogs",
+    "displayName": "Dog"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "maxLength": 30,
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "age_in_months": {
+      "type": "integer",
+      "required": true,
+      "max": 100
+    },
+    "sex": {
+      "type": "enumeration",
+      "required": true,
+      "enum": [
+        "male",
+        "female"
+      ]
+    },
+    "description": {
+      "type": "string",
+      "maxLength": 200
+    },
+    "order": {
+      "type": "integer",
+      "min": 1
+    }
+  }
+}
