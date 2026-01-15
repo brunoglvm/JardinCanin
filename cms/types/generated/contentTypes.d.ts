@@ -457,6 +457,9 @@ export interface ApiDogDog extends Struct.CollectionTypeSchema {
         maxLength: 200;
       }>;
     image: Schema.Attribute.Media<"images"> & Schema.Attribute.Required;
+    isActive: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<true>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<"oneToMany", "api::dog.dog"> &
       Schema.Attribute.Private;
@@ -466,12 +469,14 @@ export interface ApiDogDog extends Struct.CollectionTypeSchema {
         maxLength: 30;
       }>;
     order: Schema.Attribute.Integer &
+      Schema.Attribute.Required &
       Schema.Attribute.SetMinMax<
         {
           min: 1;
         },
         number
-      >;
+      > &
+      Schema.Attribute.DefaultTo<1>;
     publishedAt: Schema.Attribute.DateTime;
     sex: Schema.Attribute.Enumeration<["male", "female"]> &
       Schema.Attribute.Required;

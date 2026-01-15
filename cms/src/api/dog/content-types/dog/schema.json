@@ -43,7 +43,14 @@
     },
     "order": {
       "type": "integer",
+      "required": true,
+      "default": 1,
       "min": 1
+    },
+    "isActive": {
+      "type": "boolean",
+      "required": true,
+      "default": true
     }
   }
 }

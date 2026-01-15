@@ -2,6 +2,11 @@
 import { dogSlides } from "../data/dogs";
 import Layout from "../layouts/layout.astro";
 import Carousel from "../components/carousel/carousel.astro";
+
+import { getDogArticles } from "../services/strapi";
+
+const articles = await getDogArticles();
+console.log(articles);
 ---
 
 <section
