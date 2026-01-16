@@ -1,12 +1,21 @@
 ---
-import { dogSlides } from "../data/dogs";
+import { getDogs } from "../services/strapi";
+import { dogSlidesFallback } from "../data/dogs";
+import { getAgeAltText } from "../utils/age-formatters";
 import Layout from "../layouts/layout.astro";
 import Carousel from "../components/carousel/carousel.astro";
 
-import { getDogArticles } from "../services/strapi";
+const dogs = await getDogs();
+const dogSlides = dogs.map((dog) => ({
+  name: dog.name,
+  ageInMonths: dog.ageInMonths,
+  sex: dog.sex,
+  desc: dog.description ?? "",
+  img: dog.imageUrl,
+  alt: `${dog.name}, ${getAgeAltText(dog.ageInMonths)} ${dog.sex} dog`,
+}));
 
-const articles = await getDogArticles();
-console.log(articles);
+const slides = dogSlides.length ? dogSlides : dogSlidesFallback;
 ---
 
 <section
@@ -26,6 +35,6 @@ console.log(articles);
     </p>
   </Layout>
   <div class="mt-8 md:mt-12">
-    <Carousel slides={dogSlides} />
+    <Carousel slides={slides} />
   </div>
 </section>

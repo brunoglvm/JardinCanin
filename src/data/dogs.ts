@@ -90,7 +90,7 @@ const dogs: DogSource[] = [
   },
 ];
 
-export const dogSlides = await Promise.all(
+export const dogSlidesFallback = await Promise.all(
   dogs.map(async (dog) => {
     const img = (
       await import(`../assets/images/dogs/${dog.name.toLowerCase()}.webp`)

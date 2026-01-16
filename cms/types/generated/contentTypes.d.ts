@@ -445,7 +445,7 @@ export interface ApiDogDog extends Struct.CollectionTypeSchema {
       Schema.Attribute.Required &
       Schema.Attribute.SetMinMax<
         {
-          max: 100;
+          max: 240;
         },
         number
       >;
@@ -454,7 +454,7 @@ export interface ApiDogDog extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     description: Schema.Attribute.String &
       Schema.Attribute.SetMinMaxLength<{
-        maxLength: 200;
+        maxLength: 120;
       }>;
     image: Schema.Attribute.Media<"images"> & Schema.Attribute.Required;
     isActive: Schema.Attribute.Boolean &

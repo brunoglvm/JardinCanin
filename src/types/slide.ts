@@ -1,7 +1,7 @@
 import type { ImageMetadata } from "astro";
 
 export type Slide = {
-  img: ImageMetadata;
+  img: ImageMetadata | string;
   alt: string;
 };
 

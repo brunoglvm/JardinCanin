@@ -10,7 +10,7 @@ const getMediaUrl = (media: any) => {
   return url ? (url.startsWith("http") ? url : `${baseUrl}${url}`) : null;
 };
 
-export type DogArticle = {
+type Dog = {
   id: number;
   name: string;
   description: string | null;
@@ -21,7 +21,7 @@ export type DogArticle = {
   isActive: boolean;
 };
 
-export const getDogArticles = async (): Promise<DogArticle[]> => {
+export const getDogs = async (): Promise<Dog[]> => {
   const params = {
     "sort[0]": "order:asc",
     "sort[1]": "createdAt:desc",
@@ -46,12 +46,10 @@ export const getDogArticles = async (): Promise<DogArticle[]> => {
     return payload.data.map((item: any) => ({
       id: item.id,
       name: item.name,
-      description: item.description || null,
+      description: item.description,
       imageUrl: getMediaUrl(item.image),
       ageInMonths: item.age_in_months,
       sex: item.sex,
-      order: item.order,
-      isActive: item.isActive !== false,
     }));
   } catch (error) {
     console.error("Error:", error);

@@ -2,16 +2,13 @@
 import "../carousel/carousel.css";
 import { Image } from "astro:assets";
 import type { Slide, DogSlide } from "../../types/slide";
-import { getAge } from "../../utils/age-formatters"
-import { dogSlides } from "../../data/dogs";
+import { getAge } from "../../utils/age-formatters";
 import PawIcon from "../svg/paw.astro";
 const { slides } = Astro.props;
 
 type Props = {
   slides: Slide[] | DogSlide[];
 };
-
-const isDogSlides = slides === dogSlides;
 ---
 
 <div class="embla px-4 md:px-0">
@@ -22,29 +19,36 @@ const isDogSlides = slides === dogSlides;
 
         return (
           <div class="embla__slide relative h-68 w-102 overflow-hidden rounded-2xl md:h-112 md:w-149.5">
-            <Image
-              src={slide.img}
-              alt={slide.alt}
-              class="h-full w-full object-cover"
-            />
-
-            {isDogSlides && (
-                <div class="pointer-events-none absolute inset-x-0 bottom-0 h-4/6 bg-linear-to-t from-black/80 to-transparent" />
-                <div class="absolute right-4 bottom-4 left-4 space-y-1">
-                  <p class="text-2xl font-medium">
-                    {dogSlide.name} - {getAge(dogSlide.ageInMonths)}
-                  </p>
-                  <p class="text-gray text-sm">{dogSlide.desc}</p>
-                </div>
-                <div
-                  class={`absolute top-4 right-4 flex items-center rounded-full ${dogSlide.sex === "female" ? "bg-[#fa6e91]" : "bg-[#2fa2db]"} gap-1 px-3 py-1 text-[#2a231f]`}
-                >
-                  <PawIcon aria-hidden="true" />
-                  <p class="text-xs capitalize">{dogSlide.sex}</p>
-                </div>
+            {typeof slide.img === "string" ? (
+              <img
+                src={slide.img}
+                alt={slide.alt}
+                class="h-full w-full object-cover"
+                loading="lazy"
+                decoding="async"
+              />
+            ) : (
+              <Image
+                src={slide.img}
+                alt={slide.alt}
+                class="h-full w-full object-cover"
+              />
             )}
+            <div class="pointer-events-none absolute inset-x-0 bottom-0 h-4/6 bg-linear-to-t from-black/80 to-transparent" />
+            <div class="absolute right-4 bottom-4 left-4 space-y-1 wrap-break-word">
+              <p class="text-2xl font-medium">
+                {dogSlide.name} - {getAge(dogSlide.ageInMonths)}
+              </p>
+              <p class="text-gray text-sm">{dogSlide.desc}</p>
+            </div>
+            <div
+              class={`absolute top-4 right-4 flex items-center rounded-full ${dogSlide.sex === "female" ? "bg-[#fa6e91]" : "bg-[#2fa2db]"} gap-1 px-3 py-1 text-[#2a231f]`}
+            >
+              <PawIcon aria-hidden="true" />
+              <p class="text-xs capitalize">{dogSlide.sex}</p>
+            </div>
           </div>
-        )
+        );
       })
     }
   </div>

@@ -27,7 +27,7 @@
     "age_in_months": {
       "type": "integer",
       "required": true,
-      "max": 100
+      "max": 240
     },
     "sex": {
       "type": "enumeration",
@@ -39,7 +39,7 @@
     },
     "description": {
       "type": "string",
-      "maxLength": 200
+      "maxLength": 120
     },
     "order": {
       "type": "integer",
