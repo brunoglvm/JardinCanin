@@ -16,7 +16,7 @@ The experience is structured as a single-page brand narrative with distinct sect
 
 - **Hero**: Introduction with clear calls to action.
 - **About**: Brand story, benefits, and service highlights.
-- **Our Friends**: Image carousel to showcase the daycare routine.
+- **Our Friends**: Image carousel sourced from Strapi to showcase the daycare routine.
 - **FAQ**: Common questions and expectations.
 - **CTA + Footer**: Final call to action and contact details.
 
@@ -24,7 +24,8 @@ The experience is structured as a single-page brand narrative with distinct sect
 
 - Fully responsive layout built with Astro and Tailwind CSS.
 - Smooth scrolling and subtle motion using Lenis.
-- Embla carousel with autoplay and dot navigation.
+- Embla carousel with autoplay and dot navigation, fed by Strapi content.
+- Fallback local data for the carousel if Strapi is empty or unavailable.
 - Optimized images through `astro:assets`.
 - Modular, reusable Astro components.
 
@@ -71,10 +72,13 @@ The app will be available at `http://localhost:4321`.
 
 ## CMS (Strapi)
 
-This repo also includes a Strapi setup inside `cms/` in case you want to connect the landing page to a CMS.
+This repo includes a Strapi setup in `cms/` that powers the "Our Friends" carousel.
+\*Configure the environment file and start a database (e.g., Postgres).
 
 ```bash
 cd cms
 pnpm install
 pnpm develop
 ```
+
+Strapi runs at `http://localhost:1337` by default.
