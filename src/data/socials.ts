@@ -5,7 +5,7 @@ import Linkedin from "../components/svg/socials/linkedin.astro";
 import X from "../components/svg/socials/x.astro";
 import Youtube from "../components/svg/socials/youtube.astro";
 
-export type SocialLink = {
+type SocialLink = {
   label: string;
   href: string;
   icon: AstroComponentFactory;
